@@ -557,7 +557,7 @@
     letter-spacing: -1.5px;
     text-decoration: underline;
     font-size: 13px;
-    animation: error 1s linear forwards;
+    animation: error 4s linear forwards;
 }
 @keyframes error {
     0%{
@@ -572,4 +572,162 @@
         transform: translateY(-10px);
         opacity: 0;
     }
+}
+
+@keyframes tH1 {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+.title h1{
+    opacity: 0;
+    animation: tH1 1s cubic-bezier(0,1,.76,1);
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes flowersaddon {
+    0%{
+        transform: scale(0) rotate(0deg) translateY(0px);
+
+    }
+    100%{
+        transform: scale(1.1) rotate(25deg) translateY(-5px);
+        opacity: 1;
+    }
+}
+.flowers_addon{
+    opacity: 0;
+    animation: flowersaddon 1s cubic-bezier(0,1,.76,1);
+    animation-delay: 0.6s;
+    
+    animation-fill-mode: forwards;
+}
+
+@keyframes ib{
+    0%{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.ib{
+    opacity: 0;
+    animation: ib 2s cubic-bezier(0,1,.76,1);
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes input{
+    0%{
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.inputs input{
+    opacity: 0;
+    animation: input 1s cubic-bezier(0,1,.76,1);
+    animation-delay: 1.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes button{
+    0%{
+        transform: translateX(10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.inputs button{
+    opacity: 0;
+    animation: button 1s cubic-bezier(0,1,.76,1);
+    animation-delay: 1.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bowtieH2_1{
+    0%{
+        top: 30px;
+        opacity: 0;
+    }
+    100%{
+        top: 0px;
+        opacity: 1;
+    }
+}
+.bowties h2 span:nth-child(1){
+    position: relative;
+    opacity: 0;
+    animation: bowtieH2_1 2s cubic-bezier(0,1,.76,1);
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+}
+@keyframes bowtieH2_2{
+    0%{
+        top: -30px;
+        opacity: 0;
+    }
+    100%{
+        top: 0px;
+        opacity: 1;
+    }
+}
+.bowties h2 span:nth-child(2){
+    position: relative;
+    opacity: 0;
+    animation: bowtieH2_2 2s cubic-bezier(0,1,.76,1);
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flexselection1_img {
+    0%{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.flex-selection{
+    opacity: 0;
+    animation: flexselection1_img 1s cubic-bezier(0,1,.76,1);
+    animation-delay: 2.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn_show_list{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.btn_show_list{
+    opacity: 0;
+    animation: btn_show_list 1s cubic-bezier(0,1,.76,1);
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
 }

@@ -70,11 +70,12 @@ const Home = () => {
     }
 
     if (inputRef.current.value.match(letters)) {
-      console.log('match')
-    } else if (!inputRef.current.value.match(letters)){
+      // good! keep up the good work!
+    } else if (!inputRef.current.value.match(letters) && !inputRef.current.value.length == ''){
       inputRef.current.value = inputRef.current.value.slice(0, -1);
       // console.log(`what's up?`)
       handleErrorFunction();
+      
     }
     setName(e.target.value);
 
@@ -97,11 +98,14 @@ const Home = () => {
   let wswm = 0;
   const handleErrorFunction = () => {
     setError(true);
-    console.log('yo');
-    document.getElementsByClassName('error')[0].style.animation = 'none';
-    setTimeout(()=>{
+    // console.log('yo');
+    if (!inputRef.current.value){   
+      document.getElementsByClassName('error')[0].style.animation = 'none';
+      setTimeout(()=>{
       document.getElementsByClassName('error')[0].style.animation = 'error 4s linear forwards';
-    }, 0);
+      }, 0);
+    }
+
 
   };
   return (
@@ -127,7 +131,8 @@ const Home = () => {
                </div>
               
                <div className="bowties">
-                  <h2>(Optional) Bowties:</h2>
+                  <h2><span>(Optional)</span> <span>Bowties:</span>
+                    </h2>
                   <div className="flex-selection">
                       <img src={classicbowtie} alt=""  onClick={()=>{chooser('classic')}} className={`${normalBowtieActive ? 'selected' : 'deselected'}`}/>
                       <h3>or</h3>
