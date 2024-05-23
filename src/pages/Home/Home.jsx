@@ -92,6 +92,7 @@ const Home = () => {
       } else setCardboardBowtieActive(false);
     }
   };
+  // a
   let wdwm = 0;
   let wswm = 0;
   const handleErrorFunction = () => {
