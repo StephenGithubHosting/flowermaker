@@ -211,7 +211,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../../../public/images/bowties/cardboard\ bowtie\ invisible.png');
+    background-image: url('/images/bowties/cardboard\ bowtie\ invisible.png');
     background-size: 100% 100%;
     font-size: 90%;
     transition: .4s cubic-bezier(0,.47,.34,1);
@@ -337,7 +337,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../../../public/images/bowties/cardboard\ bowtie\ invisible.png');
+    background-image: url('/images/bowties/cardboard\ bowtie\ invisible.png');
     background-size: cover;
 }
 .flower-output{
