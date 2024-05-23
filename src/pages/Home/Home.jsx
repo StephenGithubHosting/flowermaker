@@ -3,36 +3,36 @@ import './Home.css';
 import DomToImage from 'dom-to-image';
 
 
-import A from '../../../public/images/alphabet/Removed Background/a.png'
-import B from '../../../public/images/alphabet/Removed Background/b.png'
-import C from '../../../public/images/alphabet/Removed Background/c.png'
-import D from '../../../public/images/alphabet/Removed Background/d.png'
-import E from '../../../public/images/alphabet/Removed Background/e.png'
-import F from '../../../public/images/alphabet/Removed Background/f.png'
-import G from '../../../public/images/alphabet/Removed Background/g.png'
-import H from '../../../public/images/alphabet/Removed Background/h.png'
-import I from '../../../public/images/alphabet/Removed Background/i.png'
-import J from '../../../public/images/alphabet/Removed Background/j.png'
-import K from '../../../public/images/alphabet/Removed Background/k.png'
-import L from '../../../public/images/alphabet/Removed Background/l.png'
-import M from '../../../public/images/alphabet/Removed Background/m.png'
-import N from '../../../public/images/alphabet/Removed Background/n.png'
-import O from '../../../public/images/alphabet/Removed Background/o.png'
-import P from '../../../public/images/alphabet/Removed Background/p.png'
-import Q from '../../../public/images/alphabet/Removed Background/q.png'
-import R from '../../../public/images/alphabet/Removed Background/r.png'
-import S from '../../../public/images/alphabet/Removed Background/s.png'
-import T from '../../../public/images/alphabet/Removed Background/t.png'
-import U from '../../../public/images/alphabet/Removed Background/u.png'
-import V from '../../../public/images/alphabet/Removed Background/v.png'
-import W from '../../../public/images/alphabet/Removed Background/w.png'
-import X from '../../../public/images/alphabet/Removed Background/x.png'
-import Y from '../../../public/images/alphabet/Removed Background/y.png'
-import Z from '../../../public/images/alphabet/Removed Background/z.png'
-import TikTok from '../../../public/images/tiktok.png'
+import A from '/images/alphabet/Removed Background/a.png'
+import B from '/images/alphabet/Removed Background/b.png'
+import C from '/images/alphabet/Removed Background/c.png'
+import D from '/images/alphabet/Removed Background/d.png'
+import E from '/images/alphabet/Removed Background/e.png'
+import F from '/images/alphabet/Removed Background/f.png'
+import G from '/images/alphabet/Removed Background/g.png'
+import H from '/images/alphabet/Removed Background/h.png'
+import I from '/images/alphabet/Removed Background/i.png'
+import J from '/images/alphabet/Removed Background/j.png'
+import K from '/images/alphabet/Removed Background/k.png'
+import L from '/images/alphabet/Removed Background/l.png'
+import M from '/images/alphabet/Removed Background/m.png'
+import N from '/images/alphabet/Removed Background/n.png'
+import O from '/images/alphabet/Removed Background/o.png'
+import P from '/images/alphabet/Removed Background/p.png'
+import Q from '/images/alphabet/Removed Background/q.png'
+import R from '/images/alphabet/Removed Background/r.png'
+import S from '/images/alphabet/Removed Background/s.png'
+import T from '/images/alphabet/Removed Background/t.png'
+import U from '/images/alphabet/Removed Background/u.png'
+import V from '/images/alphabet/Removed Background/v.png'
+import W from '/images/alphabet/Removed Background/w.png'
+import X from '/images/alphabet/Removed Background/x.png'
+import Y from '/images/alphabet/Removed Background/y.png'
+import Z from '/images/alphabet/Removed Background/z.png'
+import TikTok from '/images/tiktok.png'
 
-import classicbowtie from '../../../public/images/bowties/bowtie.png';
-import cardboardnamedbowtie from '../../../public/images/bowties/cardboard bowtie invisible.png';
+import classicbowtie from '/images/bowties/bowtie.png';
+import cardboardnamedbowtie from '/images/bowties/cardboard bowtie invisible.png';
 import { saveAs } from 'file-saver';
 import FlowerList from '../../components/flower list/FlowerList';
 
@@ -169,7 +169,7 @@ const Home = () => {
                         {/* <div className="flowers"> */}
                         {/* <div className="flowas"> */}
                           {name.split('').map((letter, index) => {
-                            return <img src={`../../../public/images/alphabet/Resized and Removed Background/${letter.toLowerCase()}.png`} style={{ width: "200px" }} alt={letter} className={`flowerImage ${isBeingDownloaded && 'isdownloaded'}`}/>
+                            return <img src={`/images/alphabet/Resized and Removed Background/${letter.toLowerCase()}.png`} style={{ width: "200px" }} alt={letter} className={`flowerImage ${isBeingDownloaded && 'isdownloaded'}`}/>
                             
                           })}
                         {/* </div> */}
