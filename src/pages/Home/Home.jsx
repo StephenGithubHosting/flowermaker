@@ -59,7 +59,7 @@ const Home = () => {
     `Orrr.. You could put my old crush's name... You know, Gabby...`
   ];
   const [dudeWhat, setDudeWhat] = useState(false);
-
+  const emojiRegex = /\p{Emoji}/u;
   const handleTyping = (e) => {
     
     if (inputRef.current.value.includes(' ')){
@@ -71,12 +71,22 @@ const Home = () => {
 
     if (inputRef.current.value.match(letters)) {
       // good! keep up the good work!
+      console.log('match');
     } else if (!inputRef.current.value.match(letters) && !inputRef.current.value.length == ''){
       inputRef.current.value = inputRef.current.value.slice(0, -1);
       // console.log(`what's up?`)
       handleErrorFunction();
-      
     }
+    if (!inputRef.current.value.match(letters)){
+      handleErrorFunction();
+      console.log('somting wong');
+      inputRef.current.value = inputRef.current.value.slice(0, -1);
+    }
+    //! if (emojiRegex.test(inputRef.current.value)){
+    //!   console.log('emoji');
+    //!   inputRef.current.value = '';
+    //!   handleErrorFunction();
+    //! } ERROR, NOT WORKING.
     setName(e.target.value);
 
   };
