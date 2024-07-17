@@ -738,3 +738,15 @@
     animation-delay: 4s;
     animation-fill-mode: forwards;
 }
+
+.cardboardnamed.cardboardnamed.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 130px;
+}
+
+.cardboardnamed.cardboardnamed.display h2{
+    font-size: 100%;
+}

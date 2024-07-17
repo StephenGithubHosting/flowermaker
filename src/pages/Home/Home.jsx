@@ -46,7 +46,7 @@ const Home = () => {
   const [error, setError] = useState(false);
   const inputRef = useRef();
   const [name, setName] = useState('');
-  const maxNameLength = 12;
+  const maxNameLength = 20;
   const letters = /^[A-Za-z]+$/;
   const flowerWindowRef = useRef();
   const ref = useRef();
@@ -60,34 +60,48 @@ const Home = () => {
   ];
   const [dudeWhat, setDudeWhat] = useState(false);
   const emojiRegex = /\p{Emoji}/u;
+  let check = 0;
   const handleTyping = (e) => {
-    
-    if (inputRef.current.value.includes(' ')){
-      inputRef.current.value = name.replace(' ', '');
-    }
-    if (inputRef.current.value.length >= maxNameLength){
-      inputRef.current.value = name.slice(0, maxNameLength);
-    }
 
-    if (inputRef.current.value.match(letters)) {
-      // good! keep up the good work!
-      console.log('match');
-    } else if (!inputRef.current.value.match(letters) && !inputRef.current.value.length == ''){
-      inputRef.current.value = inputRef.current.value.slice(0, -1);
-      // console.log(`what's up?`)
-      handleErrorFunction();
+    if (e.target.value.length >= maxNameLength){
+      e.target.value = name.slice(0, maxNameLength);
     }
-    if (!inputRef.current.value.match(letters)){
-      handleErrorFunction();
-      console.log('somting wong');
-      inputRef.current.value = inputRef.current.value.slice(0, -1);
+    for(let i = 0; i < e.target.value.length; i++){
+        if (e.target.value[i] == ' '){
+          check++;
+        }
     }
-    //! if (emojiRegex.test(inputRef.current.value)){
-    //!   console.log('emoji');
-    //!   inputRef.current.value = '';
-    //!   handleErrorFunction();
-    //! } ERROR, NOT WORKING.
+    if (check == e.target.value.length){
+      console.log('test')
+      setName('');
+    }
     setName(e.target.value);
+  //   if (inputRef.current.value.length >= maxNameLength){
+  //     inputRef.current.value = name.slice(0, maxNameLength);
+  //   }
+
+  //   if (inputRef.current.value.match(letters)) {
+  //     // good! keep up the good work!
+  //     console.log('match');
+  //   } else if (!inputRef.current.value.match(letters) && !inputRef.current.value.length == ''){
+  //     inputRef.current.value = inputRef.current.value.slice(0, -1);
+  //     // console.log(`what's up?`)
+  //     handleErrorFunction();
+  //   } else if (inputRef.current.value === ''){
+
+  //   }
+  //    else if (!inputRef.current.value.match(letters)){
+  //     console.log('somting wong');
+  //     inputRef.current.value = '';
+  //     handleErrorFunction();
+  //     //? inputRef.current.value = inputRef.current.value.slice(0, -1);
+  //   }
+  //   //! if (emojiRegex.test(inputRef.current.value)){
+  //   //!   console.log('emoji');
+  //   //!   inputRef.current.value = '';
+  //   //!   handleErrorFunction();
+  //   //! } ERROR, NOT WORKING.
+  //   setName(e.target.value);
 
   };
   const chooser = (bowtie) =>{
@@ -184,7 +198,9 @@ const Home = () => {
                         {/* <div className="flowers"> */}
                         {/* <div className="flowas"> */}
                           {name.split('').map((letter, index) => {
-                            return <img src={`/images/alphabet/Resized and Removed Background/${letter.toLowerCase()}.png`} style={{ width: "200px" }} alt={letter} className={`flowerImage ${isBeingDownloaded && 'isdownloaded'}`}/>
+                            if (letter.match(letters)){
+                              return <img src={`/images/alphabet/Resized and Removed Background/${letter.toLowerCase()}.png`} style={{ width: "200px" }} alt={letter} className={`flowerImage ${isBeingDownloaded && 'isdownloaded'}`}/>
+                            }
                             
                           })}
                         {/* </div> */}
@@ -194,7 +210,9 @@ const Home = () => {
                           {
                             !normalBowtieActive && cardboardBowtieActive && <>
                               <div className={`cardboardnamed display ${isBeingDownloaded && 'isdownloaded'}`}>
-                                {name ? name : 'incoming text'}
+                                <h2>
+                                  {name ? name : `${['i', 'miss', 'her', 'hmm?'][Number(`${Math.random() * ['i', 'miss', 'her', 'hmm?'].length}`.split('.')[0])]}`}
+                                </h2>
                               </div>
                             </>
                           }
